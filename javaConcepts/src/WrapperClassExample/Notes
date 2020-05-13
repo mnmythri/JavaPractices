@@ -1,0 +1,60 @@
+What: 
+
+A Wrapper class is a class which contains the primitive data types (int, char, short, byte, etc). In other words, wrapper classes provide a way to use primitive data types (int, char, short, byte, etc) as objects. These wrapper classes come under java.util package.
+
+In the OOPs concepts guide, we learned that object oriented programming is all about objects. The eight primitive data types byte, short, int, long, float, double, char and boolean are not objects, Wrapper classes are used for converting primitive data types into objects, like int to Integer etc. Lets take a simple example to understand why we need wrapper class in java.
+
+For example: While working with collections in Java, we use generics for type safety like this: ArrayList<Integer> instead of this ArrayList<int>. The Integer is a wrapper class of int primitive type. We use wrapper class in this case because generics needs objects not primitives. There are several other reasons you would prefer a wrapper class instead of primitive type.
+
+Why: 
+
+Wrapper Class will convert primitive data types into objects. The objects are necessary if we wish to modify the arguments passed into the method (because primitive types are passed by value).
+The classes in java.util package handles only objects and hence wrapper classes help in this case also.
+Data structures in the Collection framework such as ArrayList and Vector store only the objects (reference types) and not the primitive types.
+The object is needed to support synchronization in multi-threading.
+
+Why we need wrapper class in Java
+1. As I mentioned above, one of the reason why we need wrapper is to use them in collections API. On the other hand the wrapper objects hold much more memory compared to primitive types. So use primitive types when you need efficiency and use wrapper class when you need objects instead of primitive types.
+
+The primitive data types are not objects so they do not belong to any class. While storing in data structures which support only objects, it is required to convert the primitive type to object first which we can do by using wrapper classes.
+
+
+Example:
+
+HashMap<Integer, String> hm = new HashMap<Integer, String>();
+So for type safety we use wrapper classes. This way we are ensuring that this HashMap keys would be of integer type and values would be of string type.
+2. Wrapper class objects allow null values while primitive data type doesn’t allow it.
+
+How:
+
+Implementation of the wrapper class in Java
+Autoboxing in Wrapper Class
+Autoboxing is used to convert primitive data types into corresponding objects.
+
+Unboxing in Wrapper Class
+Unboxing is used to convert the Wrapper class object into corresponding primitive data types.
+
+
+Primitive	Wrapper class
+boolean	Boolean
+char	Character
+byte	Byte
+short	Short
+int	Integer
+long	Long
+float	Float
+double	Double
+
+
+Used in different scenarios
+
+Change the value in Method: Java supports only call by value. So, if we pass a primitive value, it will not change the original value. But, if we convert the primitive value in an object, it will change the original value.
+Serialization: We need to convert the objects into streams to perform the serialization. If we have a primitive value, we can convert it in objects through the wrapper classes.
+Synchronization: Java synchronization works with objects in Multithreading.
+java.util package: The java.util package provides the utility classes to deal with objects.
+Collection Framework: Java collection framework works with objects only. All classes of the collection framework (ArrayList, LinkedList, Vector, HashSet, LinkedHashSet, TreeSet, PriorityQueue, ArrayDeque, etc.) deal with objects only.
+
+note: 
+Another useful method is the toString() method, which is used to convert wrapper objects to strings.
+Since Java 5, we do not need to use the valueOf() method of wrapper classes to convert the primitive into objects.
+Since Java 5, we do not need to use the intValue() method of wrapper classes to convert the wrapper type into primitives.
